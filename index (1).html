@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shubham Kumar | AI/ML Engineer Portfolio</title>
+    <meta name="description" content="Portfolio of Shubham Kumar — AI/ML Intern at Infosys Springboard, specializing in exoplanet habitability prediction and emotion-aware recommendation systems.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Three.js Background Canvas -->
+    <canvas id="bg-canvas"></canvas>
+
+    <!-- Noise Overlay -->
+    <div class="noise-overlay"></div>
+
+    <!-- Background Blobs -->
+    <div class="bg-blob blob-1"></div>
+    <div class="bg-blob blob-2"></div>
+
+    <!-- Custom Cursor -->
+    <div class="cursor" id="cursor"></div>
+    <div class="cursor-follower" id="cursor-follower"></div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scroll-progress"></div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="logo">
+            <span class="logo-bracket">&lt;</span>S.K<span class="logo-bracket">/&gt;</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#hero" class="nav-link active" data-section="hero">Home</a></li>
+            <li><a href="#about" class="nav-link" data-section="about">About</a></li>
+            <li><a href="#experience" class="nav-link" data-section="experience">Experience</a></li>
+            <li><a href="#projects" class="nav-link" data-section="projects">Projects</a></li>
+            <li><a href="#certificates" class="nav-link" data-section="certificates">Certifications</a></li>
+            <li><a href="#skills" class="nav-link" data-section="skills">Skills</a></li>
+            <li><a href="#achievements" class="nav-link" data-section="achievements">Achievements</a></li>
+            <li><a href="#education" class="nav-link" data-section="education">Education</a></li>
+            <li><a href="#contact" class="nav-link" data-section="contact">Contact</a></li>
+        </ul>
+        <div class="nav-cta">
+            <a href="Shubham cv.pdf" target="_blank" class="cv-btn magnetic-btn">
+                <span>Download CV</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+            </a>
+        </div>
+        <!-- Mobile Menu Toggle -->
+        <div class="mobile-menu-toggle" id="mobile-toggle">
+            <span></span><span></span><span></span>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="hero" class="hero-section">
+            <div class="hero-container">
+                <div class="hero-content" data-reveal="left">
+                    <div class="hero-badge">
+                        <span class="badge-dot"></span>
+                        <span>Available for Opportunities</span>
+                    </div>
+                    <h1 class="main-title">
+                        <span class="title-line">Hi, I'm</span>
+                        <span class="title-line gradient-text">Shubham Kumar</span>
+                    </h1>
+                    <div class="typing-wrapper">
+                        <span class="typing-prefix">I build </span>
+                        <span class="typing-text" id="typing-text"></span>
+                        <span class="typing-cursor">|</span>
+                    </div>
+                    <p class="hero-desc">AI/ML Intern at <strong>Infosys Springboard</strong> passionate about building intelligent systems — from predicting exoplanet habitability using astronomical data to creating emotion-aware recommendation engines that understand human sentiment in real-time.</p>
+                    <div class="hero-btns">
+                        <a href="#projects" class="primary-btn magnetic-btn">
+                            <span>View My Work</span>
+                            <div class="btn-glow"></div>
+                        </a>
+                        <a href="#contact" class="secondary-btn magnetic-btn">
+                            <span>Let's Connect</span>
+                        </a>
+                    </div>
+                    <div class="hero-social">
+                        <a href="https://github.com/shubhamkr371" target="_blank" class="social-icon" aria-label="GitHub">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                        </a>
+                        <a href="https://linkedin.com/in/shubhamkumar371" target="_blank" class="social-icon" aria-label="LinkedIn">
+                            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                        </a>
+                        <a href="mailto:Shubhamkr371@gmail.com" class="social-icon" aria-label="Email">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 01-2.06 0L2 7"/></svg>
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-image" data-reveal="right">
+                    <div class="profile-frame" id="profile-tilt">
+                        <div class="profile-glow"></div>
+                        <img src="ChatGPT Image Mar 23, 2026, 11_48_03 PM.png" alt="Shubham Kumar" id="profile-pic">
+                        <div class="orbit orbit-1"></div>
+                        <div class="orbit orbit-2"></div>
+                        <div class="orbit orbit-3"></div>
+                        <!-- Floating Tech Icons -->
+                        <!-- Floating Tech Icons -->
+                        <div class="float-icon fi-1"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></div>
+                        <div class="float-icon fi-2"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="10" rx="2"/><circle cx="12" cy="5" r="2"/><path d="M12 7v4"/><line x1="8" y1="16" x2="8" y2="16"/><line x1="16" y1="16" x2="16" y2="16"/></svg></div>
+                        <div class="float-icon fi-3"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 1.98-3A2.5 2.5 0 0 1 9.5 2Z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-1.98-3A2.5 2.5 0 0 0 14.5 2Z"/></svg></div>
+                        <div class="float-icon fi-4"><svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+                    </div>
+                </div>
+            </div>
+            <div class="scroll-indicator">
+                <span>Scroll Down</span>
+                <div class="scroll-arrow"></div>
+            </div>
+        </section>
+
+        <!-- About Section -->
+        <section id="about" class="section">
+            <div class="container">
+                <h2 class="section-title" data-reveal="up">
+                    <span class="section-label">01</span>
+                    About <span class="highlight">Me</span>
+                </h2>
+                <div class="about-grid">
+                    <div class="about-text glass" data-reveal="left">
+                        <p>I am a <strong>B.Tech Computer Science</strong> student at <strong>Lovely Professional University</strong> (2023–2027) with a deep passion for Artificial Intelligence and Machine Learning. My journey spans from building intelligent classification models for NASA-grade astronomical data to creating real-time emotion-aware systems using computer vision.</p>
+                        <p>Beyond academics, I reached the final round in the <strong>Innovate X Hackathon</strong> out of 120 teams (Top 10 Finalist). Additionally, I have solved <strong>200+ algorithmic problems on LeetCode and GeeksforGeeks</strong>, demonstrating a strong grasp of data structures, algorithms, and time-space complexity.</p>
+                    </div>
+                    <div class="stats-column" data-reveal="right">
+                        <div class="stat-card glass" data-count="10">
+                            <div class="stat-icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5H6"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5H18"/><path d="M4 22h16"/><path d="M10 14.66V17c0 .55-.47.98-.97 1.21C7.85 18.75 7 20.24 7 22"/><path d="M14 14.66V17c0 .55.47.98.97 1.21C16.15 18.75 17 20.24 17 22"/><path d="M18 2H6v7a6 6 0 0 0 12 0V2Z"/></svg></div>
+                            <h3 class="counter">Top 10</h3>
+                            <p>Innovate X Hackathon</p>
+                        </div>
+                        <div class="stat-card glass" data-count="200">
+                            <div class="stat-icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="2" y1="20" x2="22" y2="20"/></svg></div>
+                            <h3 class="counter">200+</h3>
+                            <p>LeetCode Problems</p>
+                        </div>
+                        <div class="stat-card glass">
+                            <div class="stat-icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10v6M2 10l10-5 10 5-10 5z"/><path d="M6 12v5c3 3 9 3 12 0v-5"/></svg></div>
+                            <h3>B.Tech CSE</h3>
+                            <p>LPU (2023–2027)</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Experience Section -->
+        <section id="experience" class="section">
+            <div class="container">
+                <h2 class="section-title" data-reveal="up">
+                    <span class="section-label">02</span>
+                    Professional <span class="highlight">Experience</span>
+                </h2>
+                <div class="timeline">
+                    <div class="timeline-item" data-reveal="left">
+                        <div class="timeline-dot"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+                        <div class="timeline-content glass">
+                            <div class="timeline-header">
+                                <div>
+                                    <h3>AI Intern</h3>
+                                    <span class="company">Infosys Springboard</span>
+                                </div>
+                                <span class="date-badge">Jan 2026 – Mar 2026</span>
+                            </div>
+                            <ul class="timeline-details">
+                                <li>Analyzed large-scale <strong>astronomical datasets</strong> containing orbital, stellar, and planetary features using <strong>Pandas</strong> and <strong>SQL</strong>, identifying key factors influencing planetary habitability.</li>
+                                <li>Built a robust <strong>data preprocessing pipeline</strong> involving data cleaning, feature engineering, normalization, and <strong>Exploratory Data Analysis (EDA)</strong> using <strong>NumPy</strong>, improving model stability and data quality.</li>
+                                <li>Created visualizations with <strong>Matplotlib</strong> and <strong>Seaborn</strong> to uncover relationships between planetary attributes.</li>
+                                <li>Built and optimized <strong>machine learning classification models</strong> to predict exoplanet habitability.</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <div class="container">
+                <h2 class="section-title" data-reveal="up">
+                    <span class="section-label">03</span>
+                    Featured <span class="highlight">Projects</span>
+                </h2>
+                <div class="projects-grid">
+                    <div class="project-card glass tilt-card" data-reveal="up">
+                        <div class="project-number">01</div>
+                        <div class="project-header">
+                            <div class="project-icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="8"/><path d="M3.99 17.52a11.94 11.94 0 0 1-1.07-4.11 11.93 11.93 0 0 1 12.08-11.39M19.95 6.42A11.93 11.93 0 0 1 21 10.53a11.94 11.94 0 0 1-12.08 11.39"/></svg></div>
+                            <a href="https://github.com/GKSJ-Deepvision/B13-ExoHabitAI/tree/Shubham_Kumar" target="_blank" class="project-external" aria-label="View Source">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                            </a>
+                        </div>
+                        <h3>Predicting the Habitability of Exoplanets</h3>
+                        <p>Developed a machine learning model to predict exoplanet habitability using key astrophysical parameters that enable data-driven identification of potentially habitable planets. Achieved high prediction accuracy and improved classification performance through feature engineering and hyperparameter tuning. Built a web-based application using <strong>Flask</strong> for real-time habitability prediction. Evaluated model performance using precision, recall, F1-score, and confusion matrix.</p>
+                        <div class="tags">
+                            <span>NumPy</span><span>Pandas</span><span>SQL</span><span>Machine Learning</span><span>Flask</span>
+                        </div>
+                    </div>
+                    <div class="project-card glass tilt-card" data-reveal="up">
+                        <div class="project-number">02</div>
+                        <div class="project-header">
+                            <div class="project-icon"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
+                            <a href="https://github.com/shubhamkr371/Emotion-Aware-Product-Recommendations-" target="_blank" class="project-external" aria-label="View Source">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                            </a>
+                        </div>
+                        <h3>Emotion-Aware Product Recommendations</h3>
+                        <p>Developed a real-time Emotion-aware product recommendation system that detects user emotions through real-time facial expressions via webcam. Implemented emotion detection models to classify user moods into categories such as happy, sad, angry, and neutral. Mapped emotions to relevant product categories suggesting sadness → books, happiness → electronics. Designed and deployed a web-based interface for emotionally intelligent product recommendations.</p>
+                        <div class="tags">
+                            <span>Python</span><span>Machine Learning</span><span>OpenCV</span><span>React</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section id="skills" class="section">
+            <div class="container">
+                <h2 class="section-title" data-reveal="up">
+                    <span class="section-label">05</span>
+                    Technical <span class="highlight">Arsenal</span>
+                </h2>
+                <div class="skills-grid">
+                    <div class="skill-group glass" data-reveal="up">
+                        <div class="skill-group-icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"/><line x1="12" y1="19" x2="20" y2="19"/></svg></div>
+                        <h4>Languages</h4>
+                        <div class="skill-bars">
+                            <div class="skill-bar-item">
+                                <div class="skill-bar-header"><span>Python</span><span>90%</span></div>
+                                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="90"></div></div>
+                            </div>
+                            <div class="skill-bar-item">
+                                <div class="skill-bar-header"><span>C++</span><span>80%</span></div>
+                                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="80"></div></div>
+                            </div>
+                            <div class="skill-bar-item">
+                                <div class="skill-bar-header"><span>Java</span><span>75%</span></div>
+                                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="75"></div></div>
+                            </div>
+                            <div class="skill-bar-item">
+                                <div class="skill-bar-header"><span>SQL</span><span>85%</span></div>
+                                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="85"></div></div>
+                            </div>
+                            <div class="skill-bar-item">
+                                <div class="skill-bar-header"><span>Bash</span><span>60%</span></div>
+                                <div class="skill-bar-track"><div class="skill-bar-fill" data-width="60"></div></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="skill-group glass" data-reveal="up">
+                        <div class="skill-group-icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/></svg></div>
+                        <h4>Technologies/Frameworks</h4>
+                        <div class="skill-tags-grid">
+                            <span class="skill-chip">Scikit-learn</span>
+                            <span class="skill-chip">TensorFlow</span>
+                            <span class="skill-chip">OpenCV</span>
+                            <span class="skill-chip">XGBoost</span>
+                        </div>
+                    </div>
+                    <div class="skill-group glass" data-reveal="up">
+                        <div class="skill-group-icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 16V7a2 2 0 0 0-2-2H6a2 2 0 0 0-2 2v9m16 0H4m16 0 1.28 2.55a1 1 0 0 1-.9 1.45H3.62a1 1 0 0 1-.9-1.45L4 16"/></svg></div>
+                        <h4>Tools & Platforms</h4>
+                        <div class="skill-tags-grid">
+                            <span class="skill-chip">Git</span>
+                            <span class="skill-chip">GitHub</span>
+                            <span class="skill-chip">MySQL</span>
+                            <span class="skill-chip">Linux (Ubuntu)</span>
+                            <span class="skill-chip">Jupyter Notebook</span>
+                            <span class="skill-chip">Power BI</span>
+                            <span class="skill-chip">AWS</span>
+                            <span class="skill-chip">Hadoop</span>
+                        </div>
+                    </div>
+                    <div class="skill-group glass" data-reveal="up">
+                        <div class="skill-group-icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg></div>
+                        <h4>MLOps & Deployment</h4>
+                        <div class="skill-tags-grid">
+                            <span class="skill-chip">Docker</span>
+                            <span class="skill-chip">Flask</span>
+                            <span class="skill-chip">Streamlit</span>
+                            <span class="skill-chip">Model Deployment</span>
+                        </div>
+                    </div>
+                    <div class="skill-group glass" data-reveal="up">
+                        <div class="skill-group-icon"><svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+                        <h4>Soft Skills</h4>
+                        <div class="skill-tags-grid">
+                            <span class="skill-chip">Problem-Solving</span>
+                            <span class="skill-chip">Analytical Thinking</span>
+                            <span class="skill-chip">Team Collaboration</span>
+                            <span class="skill-chip">Adaptability</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Achievements Section -->
+        <section id="achievements" class="section">
+            <div class="container">
+                <h2 class="section-title" data-reveal="up">
+                    <span class="section-label">06</span>
+                    Key <span class="highlight">Achievements</span>
+                </h2>
+                <div class="achievements-grid">
+                    <div class="achievement-card glass" data-reveal="up">
+                        <div class="achievement-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 9L12 3l6 6M12 3v18"/><circle cx="12" cy="19" r="2"/></svg>
+                        </div>
+                        <h3>Innovate X Hackathon</h3>
+                        <p class="achievement-title">Top 10 Finalist</p>
+                        <p>Reached the final round in the Innovate X Hackathon out of 120 teams, demonstrating exceptional problem-solving and innovation capabilities.</p>
+                    </div>
+                    <div class="achievement-card glass" data-reveal="up">
+                        <div class="achievement-icon">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 11l3 3L22 4"/><path d="M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/></svg>
+                        </div>
+                        <h3>Data Structures & Algorithms</h3>
+                        <p class="achievement-title">200+ Problems Solved</p>
+                        <p>Solved 200+ algorithmic problems on LeetCode and GeeksforGeeks covering arrays, strings, linked lists, stacks, queues, trees, graphs, and dynamic programming with strong grasp of time-space complexity.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certificates Section -->
+        <section id="certificates" class="section">
+            <div class="container">
+                <h2 class="section-title" data-reveal="up">
+                    <span class="section-label">04</span>
+                    Professional <span class="highlight">Certifications</span>
+                </h2>
+                <div class="certificates-grid">
+                    <div class="cert-card glass tilt-card" data-reveal="up">
+                        <div class="cert-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="40" height="40"><path d="M12 15l-2 5l9-5l-2-5l-5 5z"/><circle cx="12" cy="8" r="6"/></svg>
+                        </div>
+                        <div class="cert-content">
+                            <h3>Cloud Computing</h3>
+                            <p class="cert-issuer">NPTEL</p>
+                            <span class="cert-date">Oct 2025</span>
+                        </div>
+                        <a href="https://archive.nptel.ac.in/content/noc/NOC25/SEM1/Ecertificates/106/noc25-cs11/Course/NPTEL25CS11S153730275804252366.pdf" target="_blank" class="cert-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="9 18 15 12 9 6"/></svg></a>
+                    </div>
+                    <div class="cert-card glass tilt-card" data-reveal="up" style="transition-delay: 0.1s;">
+                        <div class="cert-icon">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="40" height="40"><path d="M12 15l-2 5l9-5l-2-5l-5 5z"/><circle cx="12" cy="8" r="6"/></svg>
+                        </div>
+                        <div class="cert-content">
+                            <h3>AI & ML for Real World Problem Solving</h3>
+                            <p class="cert-issuer">Lovely Professional University</p>
+                            <span class="cert-date">Jun 2025</span>
+                        </div>
+                        <a href="https://files.lpu.in/umsweb/skilldevcourse/SkillDevelopmentCertificates/12325677_851_14_08_2025.pdf?_gl=1*1w806hc*_gcl_au*MTMyMzQxNDg2MS4xNzY0MTA0MDkx*_ga*NTkwNDQ0OTQ1LjE3MTMxMDI3ODk.*_ga_WKLQCVXZ47*czE3NjQxMDQwOTEkbzEwJGcxJHQxNzY0MTA0MTE4JGozMyRsMCRoMA.." target="_blank" class="cert-link"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><polyline points="9 18 15 12 9 6"/></svg></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education" class="section">
+            <div class="container">
+                <h2 class="section-title" data-reveal="up">
+                    <span class="section-label">07</span>
+                    Academic <span class="highlight">Journey</span>
+                </h2>
+                <div class="timeline">
+                    <div class="timeline-item" data-reveal="left">
+                        <div class="timeline-dot"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+                        <div class="timeline-content glass">
+                            <div class="timeline-header">
+                                <div>
+                                    <h3>B.Tech Computer Science</h3>
+                                    <span class="company">Lovely Professional University</span>
+                                </div>
+                                <span class="date-badge">2023 – Present</span>
+                            </div>
+                            <ul class="timeline-details">
+                                <li><strong>CGPA:</strong> 7.2</li>
+                                <li>Jalandhar, Punjab</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-reveal="right">
+                        <div class="timeline-dot"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+                        <div class="timeline-content glass">
+                            <div class="timeline-header">
+                                <div>
+                                    <h3>12th with Science</h3>
+                                    <span class="company">Sanghmitra Public School</span>
+                                </div>
+                                <span class="date-badge">2019 – 2021</span>
+                            </div>
+                            <ul class="timeline-details">
+                                <li><strong>Percentage:</strong> 60.8%</li>
+                                <li>Siwan, Bihar</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="timeline-item" data-reveal="left">
+                        <div class="timeline-dot"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></div>
+                        <div class="timeline-content glass">
+                            <div class="timeline-header">
+                                <div>
+                                    <h3>10th with Science</h3>
+                                    <span class="company">Arihant Public School</span>
+                                </div>
+                                <span class="date-badge">2018 – 2019</span>
+                            </div>
+                            <ul class="timeline-details">
+                                <li><strong>Percentage:</strong> 69.4%</li>
+                                <li>Kota, Rajasthan</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="section">
+            <div class="container">
+                <h2 class="section-title" data-reveal="up">
+                    <span class="section-label">08</span>
+                    Get In <span class="highlight">Touch</span>
+                </h2>
+                <div class="contact-wrapper" data-reveal="up">
+                    <div class="contact-left glass">
+                        <h3>Let's work together</h3>
+                        <p>Feel free to reach out for collaborations, opportunities, or just a friendly hello. I'm always excited to connect with fellow tech enthusiasts.</p>
+                        <div class="contact-details">
+                            <a href="mailto:Shubhamkr371@gmail.com" class="contact-item">
+                                <div class="contact-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></div>
+                                <div>
+                                    <span class="contact-label">Email</span>
+                                    <span class="contact-value">Shubhamkr371@gmail.com</span>
+                                </div>
+                            </a>
+                            <a href="tel:+917891028459" class="contact-item">
+                                <div class="contact-item-icon"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg></div>
+                                <div>
+                                    <span class="contact-label">Phone</span>
+                                    <span class="contact-value">+91-7891028459</span>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="contact-socials">
+                            <a href="https://github.com/shubhamkr371" target="_blank" class="contact-social-btn">
+                                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z"/></svg>
+                                <span>GitHub</span>
+                            </a>
+                            <a href="https://linkedin.com/in/shubhamkumar371" target="_blank" class="contact-social-btn">
+                                <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+                                <span>LinkedIn</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="contact-right glass">
+                        <form class="contact-form" id="contact-form">
+                            <div class="form-group">
+                                <input type="text" id="name" required>
+                                <label for="name">Your Name</label>
+                                <div class="input-line"></div>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" id="email" required>
+                                <label for="email">Your Email</label>
+                                <div class="input-line"></div>
+                            </div>
+                            <div class="form-group">
+                                <input type="text" id="subject" placeholder="Job Opportunity, Collaboration, etc.">
+                                <label for="subject">Subject (Optional)</label>
+                                <div class="input-line"></div>
+                            </div>
+                            <div class="form-group">
+                                <textarea id="message" rows="4" required></textarea>
+                                <label for="message">Your Message</label>
+                                <div class="input-line"></div>
+                            </div>
+                            <button type="submit" class="primary-btn magnetic-btn submit-btn">
+                                <span>Send Message</span>
+                                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg>
+                            </button>
+                        </form>
+                        <div id="toast-container"></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <span class="logo-bracket">&lt;</span>S.K<span class="logo-bracket">/&gt;</span>
+            </div>
+            <p>Designed & Built by Shubham Kumar &copy; 2026</p>
+            <p class="footer-sub">Crafted with passion, powered by AI.</p>
+        </div>
+    </footer>
+
+    <!-- Three.js -->
+    <script async src="https://unpkg.com/es-module-shims@1.8.0/dist/es-module-shims.js"></script>
+    <script type="importmap">
+    {
+      "imports": {
+        "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+        "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+      }
+    }
+    </script>
+    <script type="module" src="script.js"></script>
+</body>
+</html>
